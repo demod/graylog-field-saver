@@ -18,7 +18,7 @@ This script has been tested with graylog-web-interface 1.3.3, chrome 50.0 and fi
     into a browser window
 3. Open your graylog instance using the URL configured in the @match field in the 
     `==UserScript==` header of the script
-4. After following these instructions exactly your graylog streams view should contain two new buttons:
+4. After following these instructions exactly your graylog streams view should contain new buttons:
    ![](example.png "Graylog with active userscript")
 
 
