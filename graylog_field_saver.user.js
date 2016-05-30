@@ -10,7 +10,7 @@
 // @run-at       document-idle
 // ==/UserScript==
 
-/* 
+/*
 License:
 This work is licensed under a Creative Commons Attribution 4.0 International License.
 http://creativecommons.org/licenses/by/4.0/
@@ -47,7 +47,7 @@ Please refer to https://github.com/demod/graylog-field-saver for instructions
 
     var getAutoloadFlag = function() {
         var jsonAutoload = localStorage.getItem(LOCAL_STORAGE_AUTOLOAD) || "[]";
-        var autoloadFlag = (JSON.parse(jsonAutoload) == true);
+        var autoloadFlag = (JSON.parse(jsonAutoload) === true);
 
         return autoloadFlag;
     };
@@ -108,11 +108,12 @@ Please refer to https://github.com/demod/graylog-field-saver for instructions
     var saveBtn = document.getElementById("field_saver_saveBtn");
     saveBtn.onclick = saveBtnCallback;
 
+    var autoloadBtnHtml;
     // insert auto load toggle button with correct toggle state
     if (getAutoloadFlag()) {
-        var autoloadBtnHtml = `<button id="field_saver_autoloadBtn" type="button" class="btn btn-default btn-sm active" data-toggle="button" aria-pressed="true" autocomplete="off" style="margin:5px 5px 0 0">Auto load</button>`;
+        autoloadBtnHtml = '<button id="field_saver_autoloadBtn" type="button" class="btn btn-default btn-sm active" data-toggle="button" aria-pressed="true" autocomplete="off" style="margin:5px 5px 0 0">Auto load</button>';
     } else {
-        var autoloadBtnHtml = `<button id="field_saver_autoloadBtn" type="button" class="btn btn-default btn-sm" data-toggle="button" autocomplete="off" style="margin:5px 5px 0 0">Auto load</button>`;
+        autoloadBtnHtml = '<button id="field_saver_autoloadBtn" type="button" class="btn btn-default btn-sm" data-toggle="button" autocomplete="off" style="margin:5px 5px 0 0">Auto load</button>';
     }
 
     saveBtn.insertAdjacentHTML("afterend", autoloadBtnHtml);
